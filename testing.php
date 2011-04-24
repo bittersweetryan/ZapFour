@@ -1,4 +1,5 @@
 <?php
+/*
     # sample4b.php file
     # retrieving and displaying multiple record
 
@@ -25,4 +26,28 @@
     }
 
     $result->Close($sql);
+ */
 ?>
+
+<?php
+
+require_once 'includes/foursquare.php';          //loading the class
+$fq = new fourSquare("ryan.anklam@gmail.com", "Dyn0mite");  //fetching the check-in data
+?>
+
+
+<div id="foursquare" style="text-align:center">
+    <h2>Last known location:</h2>
+
+    <!--displaying the foursquare logo for the venue type-->
+    <img src="<?=$fq->venueIcon?>" />
+
+    <!--displaying the venue name and the venue type-->
+    <?=$fq->venueName?> (<?=$fq->venueType?>)<br>
+
+    <!--Displaying the map-->
+    <img src="<?=$fq->getMapUrl(150, 150)?>" /><br/>
+
+    <!-- displaying the user comment-->
+    "<i><?=$fq->comment?></i>"<br>
+</div>
