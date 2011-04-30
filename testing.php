@@ -33,6 +33,10 @@
 
 require_once 'includes/foursquare.php';          //loading the class
 $fq = new fourSquare("ryan.anklam@gmail.com", "Dyn0mite");  //fetching the check-in data
+include_once('includes/dBug.php');
+//new dBug($myVariable);
+
+new dBug($fq);
 ?>
 
 
