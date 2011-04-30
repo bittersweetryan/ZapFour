@@ -1,0 +1,48 @@
+<?php
+
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+class forecast {
+    protected $_zip;
+    protected $_XMLURL;
+    protected $_xmlstr;
+    protected $_forecastDays;
+    
+    public function __construct($zip, $type="WUND_SIMPLE") {
+        $this->_zip = $zip;
+        $this->_XMLURL = "http://api.wunderground.com/auto/wui/geo/ForecastXML/index.xml?query=".$this->_zip;
+        $this->fetchXML()->parseXML();
+    }
+    
+    private function fetchXML(){
+        $ch = curl_init($this->_XMLURL);
+        curl_setopt($ch, CURLOPT_HEADER, 0); //I don't want any headers.
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); //I want a string returned.
+        curl_setopt($ch, CURLOPT_TIMEOUT_MS, TIMEOUT); //they get two seconds to respond or we take action
+        $this->_xmlstr = curl_exec($ch);
+        //if this query exceeds our predefined timeout value, cry bloody murder.
+        if( !$this->_xmlstr ) throw new Exception ("WEATHER_DTA: ".curl_error($ch));
+        curl_close($ch);
+        return $this;
+    }
+    private function parseXML(){
+        $xml = new SimpleXMLElement($this->_xmlstr);
+        
+        var_dump($xml->children("simpleforecast"));
+        
+        foreach($xml->children("simpleforecast")->children() as $forecastday){
+            echo $forecastday->getName()."<br />";
+        }
+        return $this;
+    }
+    
+    public function render(){
+        echo "Here's a forecast.";
+    }
+}
+
+
+?>
