@@ -11,6 +11,6 @@
 		
 		$_SESSION["foursquare"] = $foursquare;
 		
-		$response = $foursquare->GetRecentCheckins();
+		$checkins = $foursquare->GetRecentCheckins(); 
 	}
 ?>

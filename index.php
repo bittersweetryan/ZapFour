@@ -1,8 +1,12 @@
 <?php
-	session_start();
 	include_once("init.php");
-	include_once("foursquare.php");
+	session_start();
+	
 	include_once("includes/dBug.php");
+	include_once("foursquare.php");
+	
+	if(isset($checkins))
+		new dBug($checkins);
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -32,7 +36,7 @@
     <?php 
 	// If we have not received a token, display the link for Foursquare webauth
 	if($foursquare->GetAccessToken() == ""){ 
-		echo "<a href='".$foursquare->AuthenticationLink()."'>Connect to this app via Foursquare</a>";
+		echo "<a href=" . $foursquare->AuthenticationLink() . ">Connect to this app via Foursquare</a>";
 	// Otherwise display the token
 	}else{
 		echo "Your auth token: $token";

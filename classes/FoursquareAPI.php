@@ -15,7 +15,7 @@
  * Foursquare API, as $callbackURLwell as the necessary functionality for acquiring an 
  * access token for a user via Foursquare web authentication
  */
-class FoursquareApi {
+class FoursquareAPI {
 	
 	/** @var String $BaseUrl The base url for the foursquare API */
 	private $BaseUrl = "https://api.foursquare.com/";
@@ -185,7 +185,6 @@ class FoursquareApi {
 	}
 	
 	public function getRecentCheckins(){
-		var_dump($this->BaseUrl . "/" . $this->checkinURL);
 		return $this->GetPrivate($this->checkinURL);
 	}	
 	
