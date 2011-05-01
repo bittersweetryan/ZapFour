@@ -149,7 +149,7 @@ class forecast implements iSearchable{
         if(count($this->_data) > 0){
             $html = "<ul class=''>";
             foreach($this->_data as $day){
-                $html .= "<li class='".$day['icon']."'>".$day['highFahrenheit']."</li>\n";
+                $html .= "<li class='".$this->getForecastIcon($day['icon'])."'>".$day['highFahrenheit']."</li>\n";
             }
             $html .= "</ul>";
             return $html;
@@ -202,6 +202,30 @@ class forecast implements iSearchable{
     }
     public function getMaxHotFahrenheit(){
         return $this->max_hot_fahrenheit;
+    }
+    public function getForecastIcon($cond){
+        $translate = array("chanceflurries" => "snow",
+        "chancerain" => "rain",
+        "chancesleet" => "snow",
+        "chancesnow" => "snow",
+        "chancetstorms" => "rain",
+        "clear" => "warm",
+        "cloudy" => "cloudy",
+        "flurries" => "snow",
+        "fog" => "cloudy",
+        "hazy" => "cloudy",
+        "mostlycloudy" => "partlysunny",
+        "mostlysunny" => "partlysunny",
+        "partlycloudy" => "partlysunny",
+        "partlysunny" => "partlysunny",
+        "rain"  => "rain",
+        "sleet" => "snow",
+        "snow" => "snow",
+        "sunny" => "warm",
+        "tstorms" => "rain",
+        "tstorms" => "rain",
+        "unknown" => "na");
+        return $translate[$cond];
     }
     
     
