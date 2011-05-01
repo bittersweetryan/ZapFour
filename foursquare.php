@@ -18,5 +18,5 @@
 		$checkins = $foursquare->GetRecentCheckins(); 
 	}
 	
-	
+	print_r($checkins);
 ?>

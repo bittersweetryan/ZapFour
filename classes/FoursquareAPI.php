@@ -187,19 +187,57 @@ class FoursquareAPI {
 	public function getRecentCheckins(){
 		$checkinsUnmassagedJSON =  $this->GetPrivate($this->checkinURL);
 		
+		$this->massageJSON($checkinsUnmassagedJSON);
 		
-		
+		return $checkinsUnmassagedJSON;
 	}	
 	
 	public function massageJSON($json){
-		try{
+		//try{
+			$allCategories = array();
+			
 			$php_object = json_decode($json);
 			
-			foreach()	
-		}
-		catch(Exception $ex){
-			return "";
-		}
+			$checkins = $php_object->response->checkins->items;
+			
+			//may want to refactor to get last 20 or so checkins
+			if(is_array($checkins)){
+				foreach($checkins as $key => $value){
+					
+					$categories = $this->getCategoriesFromCategoryArray($value);
+					
+					foreach($categories as $key => $categoryName){
+						$allCategories[] = $categoryName;
+					}
+				}	
+				
+				echo("<pre>");print_r($allCategories);echo("</pre>");
+				
+				die();	
+			}
+			else{
+				
+				
+			}
+		//}
+		//catch(Exception $ex){
+		//	var_dump($ex);
+		//	return "";
+		//}
+	}
+	
+	public function getCategoriesFromCategoryArray($categories){
+		//create a new category array
+		$categoryNames = array();
+		
+		if(array_key_exists("venue",$categories)){
+			$categoryArray = $categories->venue->categories;
+		
+			foreach($categoryArray as $key => $category){
+				$categoryNames[] = $category->name;
+			}	
+		}		
+		return $categoryNames;
 	}
 	
 	public function getCallbackURL(){
