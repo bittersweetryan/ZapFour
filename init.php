@@ -13,6 +13,4 @@ spl_autoload_register(function ($className) {
        require_once WEBPATH.DIRECTORY_SEPARATOR.'classes'.DIRECTORY_SEPARATOR.$className.'.php';});
 	  
 $Config = new Config();
-
-
 ?>

@@ -4,7 +4,7 @@ class Config{
 	
 	private $fsClientId = "LCSLN3T0TOVU2O3PCYSL312FYGDPTPIAKGYTI0GMKLWZFP31";
 	private $fsSecret = "K2BYPPF0SNZYO0A5V0SRCYIZQXKCP3ZPOBXMT2QCDVNTXEAC";
-	private $fsCallbackURI = "http://localhost/z4/tokenrequest.php"; 
+	private $fsCallbackURI = "http://localhost/z4/index.php"; 
 	private $fsAuthToken = "";
 	
 	public function __construct(){
