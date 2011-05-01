@@ -64,7 +64,7 @@ class zapFourController {
 				$this->products = array_merge($this->products, $zappos->search($key)->getProducts());
 		}
 		
-		var_dump($this->products);
+		echo"<pre>";print_r($this->products);echo"</pre>";
 		die();
 	}
 }
