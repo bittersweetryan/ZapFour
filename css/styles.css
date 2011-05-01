@@ -13,13 +13,13 @@
 	
 	img { border: none; }
 	
-	#header { padding: 10px 0; background: #333; color: #FFF; }
+	#header, #footer { padding: 10px 0; background: #333; color: #FFF; }
 	#header h1 { float: left; margin-right: 30px; width: 240px; height: 112px; }
 	#header h1 a { float: left; display: block; width: 240px; height: 112px; text-indent: -9999px; background: url('../images/logo-zap-four.png'); }
 	#header h2 { margin: 63px 0 0; padding: 0px; color: orange; text-transform: lowercase; }
 	
 	#foursquareloginlink { float: right; height: 24px; width: 180px; text-indent: -9999px; text-align: left; overflow: hidden; background: url("../images/signinwithfoursquare.png") no-repeat; }
-		
+	
 	#utility { margin: 0 0 30px; padding: 0; list-style: none; text-align: right; }
 	#utility li { display: inline; }
 	#utility li.last a { border-right: none; padding-right: -3px; }
@@ -58,6 +58,8 @@
 	.right { text-align: right; }
 	
 	.products div { text-align: center; }
+	
+	#footer { padding: 20px 0 30px; }
 
 /* ============================= */
 /* ! Layout for mobile version   */
