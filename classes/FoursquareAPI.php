@@ -185,8 +185,22 @@ class FoursquareAPI {
 	}
 	
 	public function getRecentCheckins(){
-		return $this->GetPrivate($this->checkinURL);
+		$checkinsUnmassagedJSON =  $this->GetPrivate($this->checkinURL);
+		
+		
+		
 	}	
+	
+	public function massageJSON($json){
+		try{
+			$php_object = json_decode($json);
+			
+			foreach()	
+		}
+		catch(Exception $ex){
+			return "";
+		}
+	}
 	
 	public function getCallbackURL(){
 		return $this->callbackURL;

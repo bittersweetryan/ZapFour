@@ -11,6 +11,12 @@
 		
 		$_SESSION["foursquare"] = $foursquare;
 		
+		
+	}
+	
+	if($foursquare->GetAccessToken() != ""){
 		$checkins = $foursquare->GetRecentCheckins(); 
 	}
+	
+	
 ?>
