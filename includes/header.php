@@ -64,14 +64,21 @@ php">developers</a></li>
 				<ul id="checkins">
 					
 					<?php
-						foreach($checkins as $key => $value){
-							$key = str_replace(" ","_",$key);
+						if(isset($checkins) && !empty($checkins)){
+							foreach($checkins as $key => $value){
+								$key = str_replace(" ","_",$key);
+								
+								echo('<li><a href="*"><img alt="' . $key . '" src="images/icons/' . $key . '" title="'. $value . '"></a></li>');
+							}
 							
-							echo('<li><a href="*"><img alt="' . $key . '" src="images/icons/' . $key . '" title="'. $value . '"></a></li>');
+						echo('<li><a href="*"><img alt="Shopping" src="images/icons/sale.png" title="Gap Bayshore Town Center"></a></li>');
+						echo('<li class="last"><a href="*"><img alt="Drink" src="images/icons/drink.png" title="Mo\'s Irish Pub"></a></li>;');
+						}
+						else{
+							echo('<div class="ui-state-highlight ui-corner-all" style="margin-top: 20px; padding: 0 .7em;"><p><span class="ui-icon ui-icon-info" style="float: left; margin-right: .3em;"></span><strong>Please use the "Authenticate with Foursquare" button above to login to forsurare and get personalized reccomendations"</strong>Sample ui-state-highlight style.</p></div>');
 						}
 					?>
-					<li><a href="*"><img alt="Shopping" src="images/icons/sale.png" title="Gap Bayshore Town Center"></a></li>
-					<li class="last"><a href="*"><img alt="Drink" src="images/icons/drink.png" title="Mo's Irish Pub"></a></li>
+					
 				</ul>
 			</div>
 		</div>
