@@ -29,7 +29,9 @@
 	<script type="text/javascript" src="js/css3-mediaqueries.js"></script>
 	
 	<script type="text/javascript">
-		$("a[title]").tooltip();
+		$(document).ready(function() {
+			$("[title]").tooltip();
+		}); 
 	</script>
 	
 </head>
@@ -39,14 +41,71 @@
 
 <div id="content" class="container">
 	<div class="row">
-		<div class="fourcol">
-			<p>Product 1</p>
+		<div class="threecol">
+			<div class="product">
+				<p class="productImg"><img alt="Sperry" src="images/products/sperry-1.jpg" /></p>
+				<h3>Sperry Top Sider</h3>
+				<p>Authentic Original</p>
+				<p>$85.00</p>
+			</div>
 		</div>
-		<div class="fourcol">
-			<p>Product 2</p>
+		<div class="threecol">
+			<div class="product">
+				<p class="productImg"><img alt="Swim trunks" src="images/products/trunks.jpg" /></p>
+				<h3>Hurley</h3>
+				<p>One Only Boardshort</p>
+				<p>$41.75</p>
+			</div>
 		</div>
-		<div class="fourcol last">
-			<p>Product 3</p>
+		<div class="threecol">
+			<div class="product">
+				<p class="productImg"><img alt="Sperry" src="images/products/sperry-2.jpg" /></p>
+				<h3>Sperry Top Sider</h3>
+				<p>Authentic Original</p>
+				<p>$75.00</p>
+			</div>
+		</div>
+		<div class="threecol last">
+			<div class="product">
+				<p class="productImg"><img alt="Sperry" src="images/products/sperry-1.jpg" /></p>
+				<h3>Sperry Top Sider</h3>
+				<p>Authentic Original</p>
+				<p>$85.00</p>
+			</div>
+		</div>
+	</div>
+	<div class="row products">
+		<div class="threecol">
+			<div class="product">
+				<p class="productImg"><img alt="Sperry" src="images/products/sperry-1.jpg" /></p>
+				<h3>Sperry Top Sider</h3>
+				<p>Authentic Original</p>
+				<p>$85.00</p>
+			</div>
+		</div>
+		<div class="threecol">
+			<div class="product">
+				<p class="productImg"><img alt="Swim trunks" src="images/products/trunks.jpg" /></p>
+				<h3>Hurley</h3>
+				<p>One Only Boardshort</p>
+				<p>$41.75</p>
+			</div>
+		</div>
+		<div class="threecol">
+			<div class="product">
+				<p class="productImg"><img alt="Sperry" src="images/products/sperry-2.jpg" /></p>
+				<h3>Sperry Top Sider</h3>
+				<p>Authentic Original</p>
+				<p>$75.00</p>
+			</div>
+		</div>
+		<div class="threecol last">
+			<div class="product">
+				<p class="productImg"><img alt="Sperry" src="images/products/sperry-1.jpg" /></p>
+				<h3>Sperry Top Sider</h3>
+				<p>Authentic Original</p>
+				<p>$85.00</p>
+			</div>
 		</div>
             <?PHP
             $cont->getWeatherProductsHTML(53189);
@@ -70,6 +129,5 @@
 	</div>
 </div>
 
-<?php include("includes/footer.php"); ?>
 </body>
 </html>

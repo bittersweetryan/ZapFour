@@ -1,17 +1,15 @@
 <div id="header">
 	<div class="container">
 		<div class="row">
-			<div class="fourcol">
+			<div class="eightcol">
 				<h1><a href="./">ZapFour Shopping</a></h1>
-			</div>
-			<div class="fourcol">
-					<h2>city</h2>
+				<h2>milwaukee</h2>
 			</div>
 			<div class="fourcol last">
 					<ul id="utility">
 						<li><a href="about.php">about</a></li>
 						<li><a href="developers.php">developers</a></li>
-						<li class="last"><a href="http://www.twitter.com/zapfour"><img alt="ZapFour Twitter" src="images/twitter.png"></a></li>
+						<li class="last"><a href="http://www.twitter.com/zapfour" class="twitter"><span>Follow ZapFour on Twitter</span></a></li>
 					</ul>
 					<p class="right">
 					<?php 
@@ -36,8 +34,12 @@
 <div id="navigation">
 	<div class="container">
 		<div class="row">
+<<<<<<< HEAD
+			<div class="fivecol">
+=======
 			<div class="sixcol">
                             <!--
+>>>>>>> 4505d04832f0db0fc98bd8b449fedbee89b305c8
 				<ul id="weather">
 					<li class="rain"><a href="*" title="Rainy. Better have sweet rain boots">56&deg;</a></li>
 					<li class="snow"><a href="*" title="Snowy and chilly. Get your beany and puffy coat">32&deg;</a></li>
@@ -58,7 +60,10 @@
                             echo $fcast_html;
                             ?>
 			</div>
-			<div class="sixcol last">
+			<div id="middle" class="twocol">
+				<img alt="Based on these...You need this" src="images/middle.png">
+			</div>
+			<div class="fivecol last">
 				<ul id="checkins">
 					<li><a href="*"><img alt="Work" src="images/icons/work.png" title="Design Firm"></a></li>
 					<li><a href="*"><img alt="Movie" src="images/icons/movie.png" title="Marcus Theatres Menomonee Falls"></a></li>
