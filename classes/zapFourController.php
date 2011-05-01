@@ -54,5 +54,18 @@ class zapFourController {
         }
         return FALSE;
     }
+	
+	public function getFoursquareProducts($checkins){
+		$zappos = new zappos();  //instantiate zappos, but don't do any lookups just yet
+		
+		$searchTearm = array();
+		
+		foreach($checkins as $key => $category){
+				$this->products = array_merge($this->products, $zappos->search($key)->getProducts());
+		}
+		
+		
+		die();
+	}
 }
 ?>
