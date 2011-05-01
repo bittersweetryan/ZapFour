@@ -40,92 +40,14 @@
 <?php include("includes/header.php"); ?>
 
 <div id="content" class="container">
-	<!--<div class="row">
-		<div class="threecol">
-			<div class="product">
-				<p class="productImg"><img alt="Sperry" src="images/products/sperry-1.jpg" /></p>
-				<h3>Sperry Top Sider</h3>
-				<p>Authentic Original</p>
-				<p>$85.00</p>
-			</div>
-		</div>
-		<div class="threecol">
-			<div class="product">
-				<p class="productImg"><img alt="Swim trunks" src="images/products/trunks.jpg" /></p>
-				<h3>Hurley</h3>
-				<p>One Only Boardshort</p>
-				<p>$41.75</p>
-			</div>
-		</div>
-		<div class="threecol">
-			<div class="product">
-				<p class="productImg"><img alt="Sperry" src="images/products/sperry-2.jpg" /></p>
-				<h3>Sperry Top Sider</h3>
-				<p>Authentic Original</p>
-				<p>$75.00</p>
-			</div>
-		</div>
-		<div class="threecol last">
-			<div class="product">
-				<p class="productImg"><img alt="Sperry" src="images/products/sperry-1.jpg" /></p>
-				<h3>Sperry Top Sider</h3>
-				<p>Authentic Original</p>
-				<p>$85.00</p>
-			</div>
-		</div>
-	</div>
-	<div class="row products">
-		<div class="threecol">
-			<div class="product">
-				<p class="productImg"><img alt="Sperry" src="images/products/sperry-1.jpg" /></p>
-				<h3>Sperry Top Sider</h3>
-				<p>Authentic Original</p>
-				<p>$85.00</p>
-			</div>
-		</div>
-		<div class="threecol">
-			<div class="product">
-				<p class="productImg"><img alt="Swim trunks" src="images/products/trunks.jpg" /></p>
-				<h3>Hurley</h3>
-				<p>One Only Boardshort</p>
-				<p>$41.75</p>
-			</div>
-		</div>
-		<div class="threecol">
-			<div class="product">
-				<p class="productImg"><img alt="Sperry" src="images/products/sperry-2.jpg" /></p>
-				<h3>Sperry Top Sider</h3>
-				<p>Authentic Original</p>
-				<p>$75.00</p>
-			</div>
-		</div>
-		<div class="threecol last">
-			<div class="product">
-				<p class="productImg"><img alt="Sperry" src="images/products/sperry-1.jpg" /></p>
-				<h3>Sperry Top Sider</h3>
-				<p>Authentic Original</p>
-				<p>$85.00</p>
-			</div>
-		</div>
- -->
+
             <?PHP
             $cont->getWeatherProductsHTML(53189);
             
             if(isset($checkins)){
                 $cont->getFoursquareProducts($checkins);
             }  
-            
-            
-            /*
-             * foreach($cont->getWeatherProducts(33101) as $prod){
-             
-                echo"<div class=\"fourcol\">
-                    <p><pre>";
-                print_r($prod);
-                echo"</pre></p></div>";
-            }
-             * 
-             */
+
             ?>
 	</div>
 </div>
