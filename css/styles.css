@@ -26,15 +26,21 @@
 	#utility li.last { border-right: none; margin-right: -3px; }
 	#utility a { color: #FFF; font-size: 0.9em; }
 	
-	#weather { margin: 0; padding: 0; list-style: none; }
+	#weather, #checkins { margin: 0; padding: 0; list-style: none; }
 	#weather li { float: left; margin-right: 6px; }
-	#weather a { float: left; width: 56px; height: 56px; background-color: #FFF; border: solid 4px #0096FF; background-repeat: no-repeat; background-position: 3px 3px; }
+	#weather a { float: left; padding: 33px 3px 3px 3px; width: 50px; height: 20px; background-color: #FFF; color: #0096FF; font-weight: bold; font-size: 1.4em; text-decoration: none; text-align: right; border: solid 4px #0096FF; background-repeat: no-repeat; background-position: 3px 3px; -moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; }
 	#weather li.rain a { background-image: url('../images/icons/rain.png'); }
 	#weather li.snow a { background-image: url('../images/icons/snow.png'); }
 	#weather li.fridged a { background-image: url('../images/icons/fridged.png'); }
 	#weather li.warm a { background-image: url('../images/icons/warm.png'); }
 	#weather li.hot a { background-image: url('../images/icons/hot.png'); }
 	#weather li.cold a { background-image: url('../images/icons/cold.png'); }
+	
+	#checkins { float: right; }
+	#checkins li { float: left; margin-right: 6px; }
+	#checkins li.last { margin-right: 0px; }
+	
+	#navigation { padding: 10px 0; background: #EEE; border-bottom: solid 1px gray; }
 	
 
 /* ============================= */

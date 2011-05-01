@@ -33,7 +33,7 @@
 	</div>
 <!-- End Header --></div>
 	
-<div id="">
+<div id="navigation">
 	<div class="container">
 		<div class="row">
 			<div class="sixcol">
@@ -55,7 +55,7 @@
 					<li><a href="*"><img alt="Food" src="images/icons/food.png"></a></li>
 					<li><a href="*"><img alt="Shopping" src="images/icons/sale.png"></a></li>
 					<li><a href="*"><img alt="Drink" src="images/icons/drink.png"></a></li>
-					<li><a href="*"><img alt="Work" src="images/icons/work.png"></a></li>
+					<li class="last"><a href="*"><img alt="Work" src="images/icons/work.png"></a></li>
 				</ul>
 			</div>
 		</div>
