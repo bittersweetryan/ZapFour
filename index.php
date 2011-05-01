@@ -11,7 +11,9 @@
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
 <title>ZapFour - Making Compulsive Shoppers</title>
-
+<script src="js/jquery-1.5.1.min.js" type="text/javascript"></script>
+<script src="js/jquery-ui-1.8.12.custom.min.js" type="text/javascript"></script>
+<script src="http://cdn.jquerytools.org/1.2.5/jquery.tools.min.js" type="text/javascript"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	
 	<!-- 1140px Grid styles for IE -->
@@ -25,12 +27,17 @@
 	
 	<!--css3-mediaqueries-js - http://code.google.com/p/css3-mediaqueries-js/ - Enables media queries in some unsupported browsers-->
 	<script type="text/javascript" src="js/css3-mediaqueries.js"></script>
+	
+	<script type="text/javascript">
+		$("[title]").tooltip();
+	</script>
+	
 </head>
 
 <body>
 <?php include("includes/header.php"); ?>
 
-<div class="container">
+<div id="content" class="container">
 	<div class="row">
 		<div class="fourcol">
 			<p>Product 1</p>
