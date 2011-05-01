@@ -37,6 +37,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="sixcol">
+                            <!--
 				<ul id="weather">
 					<li class="rain"><a href="*" title="Rainy. Better have sweet rain boots">56&deg;</a></li>
 					<li class="snow"><a href="*" title="Snowy and chilly. Get your beany and puffy coat">32&deg;</a></li>
@@ -45,6 +46,13 @@
 					<li class="thunderstorm"><a href="*" title="Too hot to handle in your sandals and hat">90&deg;</a></li>
 					<li class="na"><a href="*" title="Chilly. A sweater is essential">32&deg;</a></li>
 				</ul>
+                            -->
+                            <?PHP
+                            $cont = new zapFourController();
+                            $cont->getWeatherProducts(53189);
+                            $fcast_html = $cont->getWeatherForecastHTML();
+                            echo $fcast_html;
+                            ?>
 			</div>
 			<div class="sixcol last">
 				<ul id="checkins">

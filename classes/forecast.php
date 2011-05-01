@@ -147,9 +147,9 @@ class forecast implements iSearchable{
     
     public function getSixDayForecastHTML(){
         if(count($this->_data) > 0){
-            $html = "<ul class=''>";
+            $html = "<ul id=\"weather\">";
             foreach($this->_data as $day){
-                $html .= "<li class='".$this->getForecastIcon($day['icon'])."'>".$day['highFahrenheit']."</li>\n";
+                $html .= "<li class='".$this->getForecastIcon($day['icon'])."'><a title='".$day['conditions']."' href=\"*\">".$day['highFahrenheit']."&deg;</a></li>\n";
             }
             $html .= "</ul>";
             return $html;
@@ -227,7 +227,30 @@ class forecast implements iSearchable{
         "unknown" => "na");
         return $translate[$cond];
     }
-    
+    public function getForecastIconTitle($cond){
+        $translate = array("chanceflurries" => "snow",
+        "chancerain" => "rain",
+        "chancesleet" => "snow",
+        "chancesnow" => "snow",
+        "chancetstorms" => "rain",
+        "clear" => "warm",
+        "cloudy" => "cloudy",
+        "flurries" => "snow",
+        "fog" => "cloudy",
+        "hazy" => "cloudy",
+        "mostlycloudy" => "partlysunny",
+        "mostlysunny" => "partlysunny",
+        "partlycloudy" => "partlysunny",
+        "partlysunny" => "partlysunny",
+        "rain"  => "rain",
+        "sleet" => "snow",
+        "snow" => "snow",
+        "sunny" => "warm",
+        "tstorms" => "rain",
+        "tstorms" => "rain",
+        "unknown" => "na");
+        return $translate[$cond];
+    }
     
     public function setMinPrecipThreshold($val){
         $this->min_precip_threshold = $val;

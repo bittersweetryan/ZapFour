@@ -48,6 +48,19 @@
 		<div class="fourcol last">
 			<p>Product 3</p>
 		</div>
+            <?PHP
+            $cont->getWeatherProductsHTML(53189);
+            /*
+             * foreach($cont->getWeatherProducts(33101) as $prod){
+             
+                echo"<div class=\"fourcol\">
+                    <p><pre>";
+                print_r($prod);
+                echo"</pre></p></div>";
+            }
+             * 
+             */
+            ?>
 	</div>
 </div>
 
