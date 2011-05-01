@@ -107,6 +107,16 @@ class product {
         return $this;
     }
     
+    public function getThumbnailImageURL(){
+        
+        if(count($this->styles) > 0){
+            $style = array_shift($this->styles);
+            if($style instanceof style){
+                return $style->getThumbnailImageUrl();
+            }
+        }
+    }
+    
     public function setStyle( style $style, $styleID){ $this->styles[$styleID] = $style;}
     
     public function setProductId($productId) {

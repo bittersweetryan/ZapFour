@@ -35,11 +35,37 @@ class zapFourController {
         }
     }
     
+    public function getWeatherProductsHTML($zip){
+        $this->products = array();
+        $this->getWeatherProducts($zip);
+        $inc = 0;
+        foreach($this->products as $prod){
+            //echo"<pre>";print_r($prod);echo"</pre>";
+            $inc++;
+            $last = "";
+            if($inc % 3)$last = "last";
+            echo"<div class=\"fourcol $last\"><img src='".$prod->getThumbnailImageURL()."' alt='' /></div>";
+        }
+    }
+    
     public function getWeatherForecastHTML(){
         if( $this->forecast instanceof forecast ){
             return $this->forecast->getSixDayForecastHTML();
         }
         return FALSE;
     }
+	
+	public function getFoursquareProducts($checkins){
+		$zappos = new zappos();  //instantiate zappos, but don't do any lookups just yet
+		
+		$searchTearm = array();
+		
+		foreach($checkins as $key => $category){
+				$this->products = array_merge($this->products, $zappos->search($key)->getProducts());
+		}
+		
+		echo"<pre>";print_r($this->products);echo"</pre>";
+		die();
+	}
 }
 ?>
