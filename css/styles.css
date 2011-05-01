@@ -18,6 +18,9 @@
 	#header h1 a { float: left; display: block; width: 240px; height: 102px; text-indent: -9999px; background: url('../images/logo-zap-four.png'); }
 	#header h2 { margin: 50px 0 0; padding: 0px; color: orange; text-transform: lowercase; }
 	
+	#foursquareloginlink { float: right; height: 24px; width: 180px; }
+	#foursquareloginlink span { float: right; display: block; height: 24px; width: 180px; text-indent: -9999px; background: url("../images/signinwithfoursquare.png") no-repeat; }
+	
 	#utility { margin: 0 0 30px; padding: 0; list-style: none; text-align: right; }
 	#utility li { display: inline; padding-right: 6px; margin-left: 3px;  border-right: solid 1px gray; }
 	#utility li.last { border-right: none; margin-right: -3px; }
@@ -32,9 +35,6 @@
 	#weather li.warm a { background-image: url('../images/icons/warm.png'); }
 	#weather li.hot a { background-image: url('../images/icons/hot.png'); }
 	#weather li.cold a { background-image: url('../images/icons/cold.png'); }
-	
-	#foursquareloginlink { float: right; height: 24px; width: 180px; }
-	#foursquareloginlink span { float: right; display: block; height: 24px; width: 180px; text-indent: -9999px; background: url("../images/signinwithfoursquare.png") no-repeat; }
 	
 
 /* ============================= */

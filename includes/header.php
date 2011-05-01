@@ -11,7 +11,7 @@
 					<ul id="utility">
 						<li><a href="about.php">about</a></li>
 						<li><a href="developers.php">developers</a></li>
-						<li class="last"><a href="http://www.twitter.com/zapfour"><img alt="ZapFour Twitter" src="../images/twitter.png"></a></li>
+						<li class="last"><a href="http://www.twitter.com/zapfour"><img alt="ZapFour Twitter" src="images/twitter.png"></a></li>
 					</ul>
 					<p class="right">
 					<?php 
@@ -49,13 +49,13 @@
 			</div>
 			<div class="sixcol last">
 				<ul id="checkins">
-					<li><a href="*"><img alt="Work" src="../images/icons/work.png"></a></li>
-					<li><a href="*"><img alt="Movie" src="../images/icons/movie.png"></a></li>
-					<li><a href="*"><img alt="Travel" src="../images/icons/travel.png"></a></li>
-					<li><a href="*"><img alt="Food" src="../images/icons/food.png"></a></li>
-					<li><a href="*"><img alt="Shopping" src="../images/icons/sale.png"></a></li>
-					<li><a href="*"><img alt="Drink" src="../images/icons/drink.png"></a></li>
-					<li><a href="*"><img alt="Work" src="../images/icons/work.png"></a></li>
+					<li><a href="*"><img alt="Work" src="images/icons/work.png"></a></li>
+					<li><a href="*"><img alt="Movie" src="images/icons/movie.png"></a></li>
+					<li><a href="*"><img alt="Travel" src="images/icons/travel.png"></a></li>
+					<li><a href="*"><img alt="Food" src="images/icons/food.png"></a></li>
+					<li><a href="*"><img alt="Shopping" src="images/icons/sale.png"></a></li>
+					<li><a href="*"><img alt="Drink" src="images/icons/drink.png"></a></li>
+					<li><a href="*"><img alt="Work" src="images/icons/work.png"></a></li>
 				</ul>
 			</div>
 		</div>
