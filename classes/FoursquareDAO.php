@@ -49,10 +49,10 @@ class FoursquareDAO {
     	$MYSQL_DATABASE = 'zapfour';
     	$MYSQL_HOST = 'localhost';
 		
-		$keywords["Coffee Shop"] = "Your coffee you brew at home would tast better with a nice new coffee maker.  It'll save you a few bucks a week too!";
-		$keywords["Monument or Landmark"] = "We see that you like to sight see, you might want to protect that expensive camera!";
-		$keywords["Zoo or Aquarium"] = "The perfect companion to the zoo is a comfortable pair of shoes!";
-		$keywords["Music Venue"] = "Those jenas you are wearing are soo not cool enough for a concert, check these out instead!";
+		$keywords["coffee maker"] = "Your coffee you brew at home would tast better with a nice new coffee maker.  It'll save you a few bucks a week too!";
+		$keywords["camera bag"] = "We see that you like to sight see, you might want to protect that expensive camera!";
+		$keywords["mens walking shoes"] = "The perfect companion to the zoo is a comfortable pair of shoes!";
+		$keywords["mens jeans"] = "Those jenas you are wearing are soo not cool enough for a concert, check these out instead!";
 	/*
 		// Connect to the DB
 	    $link = mysql_connect($MYSQL_HOST, $MYSQL_USER, $MYSQL_PASS);
