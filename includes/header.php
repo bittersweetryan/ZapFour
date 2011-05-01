@@ -52,9 +52,7 @@
                             $cont->getWeatherProducts(53189);
                             $fcast_html = $cont->getWeatherForecastHTML();
                             
-                            if(isset($checkins)){
-                            	$cont->getFoursquareProducts($checkins);
-                            }                            
+                                                      
                             	
                             	
                             echo $fcast_html;

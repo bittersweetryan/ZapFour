@@ -39,11 +39,12 @@ class zapFourController {
         $this->products = array();
         $this->getWeatherProducts($zip);
         $inc = 0;
+        //shuffle($this->products);
         foreach($this->products as $prod){
             //echo"<pre>";print_r($prod);echo"</pre>";
             $inc++;
-            $last = "";
-            if($inc % 3)$last = "last";
+            if( ($inc % 3) == 0 )$last = "last";
+            else $last = "";
             echo"<div class=\"fourcol $last\"><img src='".$prod->getThumbnailImageURL()."' alt='' /></div>";
         }
     }
@@ -61,11 +62,20 @@ class zapFourController {
 		$searchTearm = array();
 		
 		foreach($checkins as $key => $category){
-				$this->products = array_merge($this->products, $zappos->search($key)->getProducts());
+                    $this->products = array_merge($this->products, $zappos->search($key)->getProducts());
 		}
 		
-		echo"<pre>";print_r($this->products);echo"</pre>";
-		die();
+                $inc=0;
+                //shuffle($this->products);
+		foreach($this->products as $prod){
+                    //echo"<pre>";print_r($prod);echo"</pre>";
+                    $inc++;
+                    
+                    if( ($inc % 3) == 0 )$last = "last";
+                    else $last = "";
+                    
+                    echo"<div class=\"fourcol $last\"><img src='".$prod->getThumbnailImageURL()."' alt='' /></div>";
+                }
 	}
 }
 ?>

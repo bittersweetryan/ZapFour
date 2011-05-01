@@ -50,6 +50,12 @@
 		</div>
             <?PHP
             $cont->getWeatherProductsHTML(53189);
+            
+            if(isset($checkins)){
+                $cont->getFoursquareProducts($checkins);
+            }  
+            
+            
             /*
              * foreach($cont->getWeatherProducts(33101) as $prod){
              
