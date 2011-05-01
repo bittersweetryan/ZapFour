@@ -49,7 +49,7 @@
                             -->
                             <?PHP
                             $cont = new zapFourController();
-                            $cont->getWeatherProducts(33101);
+                            $cont->getWeatherProducts(53189);
                             $fcast_html = $cont->getWeatherForecastHTML();
                             echo $fcast_html;
                             ?>
