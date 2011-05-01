@@ -187,13 +187,13 @@ class FoursquareAPI {
 	public function getRecentCheckins(){
 		$checkinsUnmassagedJSON =  $this->GetPrivate($this->checkinURL);
 		
-		$this->massageJSON($checkinsUnmassagedJSON);
-		
+		$categories = $this->massageJSON($checkinsUnmassagedJSON);
+				
 		return $checkinsUnmassagedJSON;
 	}	
 	
 	public function massageJSON($json){
-		//try{
+		try{
 			$allCategories = array();
 			
 			$php_object = json_decode($json);
@@ -210,20 +210,16 @@ class FoursquareAPI {
 						$allCategories[] = $categoryName;
 					}
 				}	
-				
-				echo("<pre>");print_r($allCategories);echo("</pre>");
-				
-				die();	
+			
 			}
-			else{
-				
-				
-			}
-		//}
-		//catch(Exception $ex){
-		//	var_dump($ex);
-		//	return "";
-		//}
+		
+			return $allCategories;
+			
+		}
+		catch(Exception $ex){
+			var_dump($ex);
+			return "";
+		}
 	}
 	
 	public function getCategoriesFromCategoryArray($categories){

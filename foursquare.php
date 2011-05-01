@@ -17,6 +17,4 @@
 	if($foursquare->GetAccessToken() != ""){
 		$checkins = $foursquare->GetRecentCheckins(); 
 	}
-	
-	print_r($checkins);
 ?>
