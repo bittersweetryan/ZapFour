@@ -1,6 +1,6 @@
 <?PHP
 define("TIMEOUT", 2000);
-define("WEBPATH", "/var/www/ryan.lootcouncil.com/");
+define("WEBPATH", "/var/www/ryan.lootcouncil.com");
 //display errors to the browse, make development life easier.
 error_reporting(E_ALL); ini_set("display_errors", 1);
 //check for existance of requried modules
