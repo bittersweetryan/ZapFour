@@ -32,6 +32,7 @@ class product {
     private $widthFit;
     private $archFit;
     private $productRating;
+    private $price; //price in the style (product lookup) //price in the product (product search)
     private $styles;
     
     function __construct($productID = null) {
@@ -186,7 +187,11 @@ class product {
     public function setProductRating($productRating) {
         $this->productRating = $productRating;
     }
-
+    
+    public function setPrice($price) {
+        $this->price = $price;
+    }
+    
     public function getProductId() {
         return $this->productId;
     }
@@ -255,7 +260,9 @@ class product {
         return $this->productRating;
     }
 
-
+    public function getPrice() {
+        return $this->price;
+    }
     
 }
 

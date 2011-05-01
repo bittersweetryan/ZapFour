@@ -40,8 +40,8 @@ class zapFourController {
         $this->getWeatherProducts($zip);
         $inc = 0;
         //shuffle($this->products);
+        
         echo"<div class=\"row\">";
-                
         foreach($this->products as $prod){
             //echo"<pre>";print_r($prod);echo"</pre>";
             $inc++;
@@ -51,13 +51,14 @@ class zapFourController {
             echo "<div class=\"threecol $last\">
 			<div class=\"product\">
 				<p class=\"productImg\"><img alt=\"Sperry\" src=\"".$prod->getThumbnailImageURL()."\" /></p>
-				<h3>Sperry Top Sider</h3>
-				<p>Authentic Original</p>
-				<p>$85.00</p>
+				<h3>".$prod->getProductName()."</h3>
+				<p>".$prod->getBrandName()."</p>
+				<p>".$prod->getPrice()."</p>
 			</div>
 		</div>";
         }
         echo"</div>";
+        //echo"<pre>";print_r($this->products);echo"</pre>";
     }
     
     public function getWeatherForecastHTML(){
@@ -69,24 +70,31 @@ class zapFourController {
 	
 	public function getFoursquareProducts($checkins){
 		$zappos = new zappos();  //instantiate zappos, but don't do any lookups just yet
-		
+		$this->products = array();
 		$searchTearm = array();
 		
 		foreach($checkins as $key => $category){
                     $this->products = array_merge($this->products, $zappos->search($key)->getProducts());
 		}
 		
-                $inc=0;
-                //shuffle($this->products);
-		foreach($this->products as $prod){
+                $inc = 0;
+                echo"<div class=\"row\">";
+                foreach($this->products as $prod){
                     //echo"<pre>";print_r($prod);echo"</pre>";
                     $inc++;
-                    
-                    if( ($inc % 3) == 0 )$last = "last";
+                    if( ($inc % 4) == 0 )$last = "last";
                     else $last = "";
-                    
-                    echo"<div class=\"fourcol $last\"><img src='".$prod->getThumbnailImageURL()."' alt='' /></div>";
+                    //echo"<div class=\"fourcol $last\"><img src='".$prod->getThumbnailImageURL()."' alt='' /></div>";
+                    echo "<div class=\"threecol $last\">
+                                <div class=\"product\">
+                                        <p class=\"productImg\"><img alt=\"Sperry\" src=\"".$prod->getThumbnailImageURL()."\" /></p>
+                                        <h3>".$prod->getProductName()."</h3>
+                                        <p>".$prod->getBrandName()."</p>
+                                        <p>".$prod->getPrice()."</p>
+                                </div>
+                        </div>";
                 }
+                echo"</div>";
 	}
 }
 ?>

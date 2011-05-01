@@ -48,6 +48,8 @@ class zappos {
             if($key == "results"){
                 foreach($data as $temp){
                     $product = new product();
+                    $product->setBrandName($temp->brandName);
+                    $product->setPrice($temp->price);
                     $style = new style();
                     $style->setStyleId($temp->styleId);
                     $style->setProductId($temp->productId);
