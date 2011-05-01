@@ -42,9 +42,12 @@
         echo "<pre>";print_r($product);echo"</pre>";
       */
     
+        /*
         $cont = new zapFourController();
         $cont->getWeatherProducts(53151);
         echo"<pre>";print_r($cont);echo"</pre><hr /><hr />";
+         * 
+         */
         
         /*fairbanks alaska
         $cont = new zapFourController();
@@ -54,7 +57,10 @@
         
         $cont = new zapFourController();
         $cont->getWeatherProducts(33101);
-        echo"<pre>";print_r($cont);echo"</pre>";
+        $fcast_html = $cont->getWeatherForecastHTML();
+        echo $fcast_html;
+        //echo"<pre>";print_r($fcast_html);echo"</pre>";;
+        
         
 	?>
 	<?php include("includes/footer.php"); ?>

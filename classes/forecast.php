@@ -145,6 +145,19 @@ class forecast implements iSearchable{
         return $keywords;
     }
     
+    public function getSixDayForecastHTML(){
+        if(count($this->_data) > 0){
+            $html = "<ul class=''>";
+            foreach($this->_data as $day){
+                $html .= "<li class='".$day['icon']."'>".$day['highFahrenheit']."</li>\n";
+            }
+            $html .= "</ul>";
+            return $html;
+        }else{
+            return false;
+        }
+    }
+    
     public function hasRain(){
         
     }
