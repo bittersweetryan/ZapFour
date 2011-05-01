@@ -56,6 +56,7 @@ class zapFourController {
 				<p>".$prod->getPrice()."</p>
 			</div>
 		</div>";
+            if( ($inc % 4) == 0 && count($this->products)>$inc) echo"</div>\n<div class=\"row\">";
         }
         echo"</div>";
         //echo"<pre>";print_r($this->products);echo"</pre>";
@@ -93,6 +94,7 @@ class zapFourController {
                                         <p>".$prod->getPrice()."</p>
                                 </div>
                         </div>";
+                    if( ($inc % 4) == 0 && count($this->products)>$inc) echo"</div>\n<div class=\"row\">";
                 }
                 echo"</div>";
 	}
