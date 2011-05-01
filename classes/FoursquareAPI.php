@@ -12,7 +12,7 @@
 /**
  * FoursquareApi
  * Provides a wrapper for making both public and authenticated requests to the
- * Foursquare API, as well as the necessary functionality for acquiring an 
+ * Foursquare API, as $callbackURLwell as the necessary functionality for acquiring an 
  * access token for a user via Foursquare web authentication
  */
 class FoursquareApi {
@@ -23,6 +23,8 @@ class FoursquareApi {
 	private $AuthUrl = "https://foursquare.com/oauth2/authenticate";
 	/** @var String $TokenUrl The url for obtaining an auth token */
 	private $TokenUrl = "https://foursquare.com/oauth2/access_token";
+	
+	private $callbackURL = "";
 	
 	private $checkinURL = "users/self/checkins";
 	
@@ -40,10 +42,11 @@ class FoursquareApi {
 	 * @param String $client_secret
 	 * @param String $version Defaults to v2, appends into the API url
 	 */
-	public function  __construct($client_id = null,$client_secret = null,$version="v2"){
+	public function  __construct($client_id = null,$client_secret = null,$callbackURL= null,$version="v2"){
 		$this->BaseUrl = "{$this->BaseUrl}$version/";
 		$this->ClientID = $client_id;
 		$this->ClientSecret = $client_secret;
+		$this->callbackURL = $callbackURL;
 	}
 	
 	// Request functions
@@ -145,13 +148,20 @@ class FoursquareApi {
 		$this->AuthToken = $token;
 	}
 	
+	public function GetAccessToken(){
+		return  $this->AuthToken;
+	}
+	
 	/**
 	 * AuthenticationLink
 	 * Returns a link to the Foursquare web authentication page.
 	 * @param String $redirect The configured redirect_uri for the provided client credentials
 	 */
-	public function AuthenticationLink($redirect){
-		$params = array("client_id"=>$this->ClientID,"response_type"=>"code","redirect_uri"=>$redirect);
+	public function AuthenticationLink($redirect = null){
+		if($redirect != null)
+			$params = array("client_id"=>$this->ClientID,"response_type"=>"code","redirect_uri"=>$redirect);
+		else
+			$params = array("client_id"=>$this->ClientID,"response_type"=>"code","redirect_uri"=>$this->callbackURL);	
 		return $this->MakeUrl($this->AuthUrl,$params);
 	}
 	
@@ -174,10 +184,14 @@ class FoursquareApi {
 		return $json->access_token;
 	}
 	
-	public function GetRecentCheckins(){
+	public function getRecentCheckins(){
 		var_dump($this->BaseUrl . "/" . $this->checkinURL);
 		return $this->GetPrivate($this->checkinURL);
 	}	
+	
+	public function getCallbackURL(){
+		return $this->callbackURL;
+	}
 }
 
 ?>
