@@ -55,10 +55,7 @@
         echo"<pre>";print_r($cont);echo"</pre><hr /><hr />";
         */
         
-        $cont = new zapFourController();
-        $cont->getWeatherProducts(33101);
-        $fcast_html = $cont->getWeatherForecastHTML();
-        echo $fcast_html;
+        
         //echo"<pre>";print_r($fcast_html);echo"</pre>";;
         
         
