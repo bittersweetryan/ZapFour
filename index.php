@@ -29,20 +29,21 @@
 
 <body>
 <?php include("includes/header.php"); ?>
-    <?php 
-	// If we have not received a token, display the link for Foursquare webauth
-	if($foursquare->GetAccessToken() == ""){ 
-		echo "<a href=" . $foursquare->AuthenticationLink() . ">Connect to this app via Foursquare</a>";
-	}
-	else{
-	?>
-	
-	You are authenticated!!   
 
-	<?php
-	}
-	?>
+<div class="container">
+	<div class="row">
+		<div class="fourcol">
+			<p>Product 1</p>
+		</div>
+		<div class="fourcol">
+			<p>Product 2</p>
+		</div>
+		<div class="fourcol last">
+			<p>Product 3</p>
+		</div>
+	</div>
+</div>
 
-	<?php include("includes/footer.php"); ?>
-    </body>
+<?php include("includes/footer.php"); ?>
+</body>
 </html>

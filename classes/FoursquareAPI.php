@@ -195,7 +195,7 @@ class FoursquareAPI {
 		try{
 			$php_object = json_decode($json);
 			
-			foreach()	
+			//foreach()	
 		}
 		catch(Exception $ex){
 			return "";
