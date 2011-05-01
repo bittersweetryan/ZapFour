@@ -29,16 +29,16 @@
 	#weather, #checkins { margin: 0; padding: 0; list-style: none; }
 	#weather li { float: left; margin-right: 6px; }
 	#weather a { float: left; padding: 33px 3px 3px 3px; width: 50px; height: 20px; background-color: #FFF; color: #0096FF; font-weight: bold; font-size: 1.4em; text-decoration: none; text-align: right; border: solid 4px #0096FF; background-repeat: no-repeat; background-position: 3px 3px; -moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; }
-	#weather li.rain a { background-image: url('../images/icons/rain.png'); }
-	#weather li.snow a { background-image: url('../images/icons/snow.png'); }
-	#weather li.fridged a { background-image: url('../images/icons/fridged.png'); }
-	#weather li.warm a { background-image: url('../images/icons/warm.png'); }
-	#weather li.hot a { background-image: url('../images/icons/hot.png'); }
-	#weather li.cold a { background-image: url('../images/icons/cold.png'); }
-	#weather li.cloudy a { background-image: url('../images/icons/cloudy.png'); }
-	#weather li.thunderstorm a { background-image: url('../images/icons/thunderstorm.png'); }
-	#weather li.partlysunny a { background-image: url('../images/icons/partlysunny.png'); }
-	#weather li.na a { background-image: url('../images/icons/na.png'); }
+	#weather li.rain a { background-image: url('/images/icons/rain.png'); }
+	#weather li.snow a { background-image: url('/images/icons/snow.png'); }
+	#weather li.fridged a { background-image: url('/images/icons/fridged.png'); }
+	#weather li.warm a { background-image: url('/images/icons/warm.png'); }
+	#weather li.hot a { background-image: url('/images/icons/hot.png'); }
+	#weather li.cold a { background-image: url('/images/icons/cold.png'); }
+	#weather li.cloudy a { background-image: url('/images/icons/cloudy.png'); }
+	#weather li.thunderstorm a { background-image: url('/images/icons/thunderstorm.png'); }
+	#weather li.partlysunny a { background-image: url('/images/icons/partlysunny.png'); }
+	#weather li.na a { background-image: url('/images/icons/na.png'); }
 
 	#checkins { float: right; }
 	#checkins li { float: left; margin-right: 6px; }
