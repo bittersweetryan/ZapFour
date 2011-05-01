@@ -1,10 +1,26 @@
-/* ============================== */
+﻿/* ============================== */
 /* ! Layout for desktop version   */
 /* ============================== */
 
-	body {
-		
-	}
+	body { margin: 0; padding: 0; font-family: Arial, Helvetica, sans-serif; font-size: 0.76em; color: #333; }
+	
+	h1 { }
+	h2 { }
+	h3 { }
+	h4 { }
+	h5 { }
+	h6 { }
+	
+	img { border: none; }
+	
+	#header { background: #333; }
+	#header h1 { float: left; width: 240px; height: 102px; }
+	#header h1 a { float: left; display: block; width: 240px; height: 102px; text-indent: -9999px; background: url('../images/logo-zap-four.png'); }
+	
+	#utility { margin: 0; padding: 0; list-style: none; }
+	#utility li { display: inline;  border-right: solid 1px gray; }
+	#utility li.last { border-right: none; }
+	#utility a { color: #FFF; font-size: 0.8em;}
 	
 
 /* ============================= */
