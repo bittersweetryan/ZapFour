@@ -40,7 +40,7 @@
 <?php include("includes/header.php"); ?>
 
 <div id="content" class="container">
-	<div class="row">
+	<!--<div class="row">
 		<div class="threecol">
 			<div class="product">
 				<p class="productImg"><img alt="Sperry" src="images/products/sperry-1.jpg" /></p>
@@ -107,6 +107,7 @@
 				<p>$85.00</p>
 			</div>
 		</div>
+ -->
             <?PHP
             $cont->getWeatherProductsHTML(53189);
             

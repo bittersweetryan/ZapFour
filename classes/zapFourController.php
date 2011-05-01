@@ -40,13 +40,24 @@ class zapFourController {
         $this->getWeatherProducts($zip);
         $inc = 0;
         //shuffle($this->products);
+        echo"<div class=\"row\">";
+                
         foreach($this->products as $prod){
             //echo"<pre>";print_r($prod);echo"</pre>";
             $inc++;
-            if( ($inc % 3) == 0 )$last = "last";
+            if( ($inc % 4) == 0 )$last = "last";
             else $last = "";
-            echo"<div class=\"fourcol $last\"><img src='".$prod->getThumbnailImageURL()."' alt='' /></div>";
+            //echo"<div class=\"fourcol $last\"><img src='".$prod->getThumbnailImageURL()."' alt='' /></div>";
+            echo "<div class=\"threecol $last\">
+			<div class=\"product\">
+				<p class=\"productImg\"><img alt=\"Sperry\" src=\"".$prod->getThumbnailImageURL()."\" /></p>
+				<h3>Sperry Top Sider</h3>
+				<p>Authentic Original</p>
+				<p>$85.00</p>
+			</div>
+		</div>";
         }
+        echo"</div>";
     }
     
     public function getWeatherForecastHTML(){
