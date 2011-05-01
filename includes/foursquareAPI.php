@@ -31,6 +31,8 @@ class FoursquareApi {
 	/** @var String $AuthToken */
 	private $AuthToken;
 	
+	private $redirectURL;
+	
 	/**
 	 * Constructor for the API
 	 * Prepares the request URL and client api params
@@ -38,10 +40,11 @@ class FoursquareApi {
 	 * @param String $client_secret
 	 * @param String $version Defaults to v2, appends into the API url
 	 */
-	public function  __construct($client_id,$client_secret,$version="v2"){
+	public function  __construct($client_id,$client_secret,$redirectURL,$version="v2"){
 		$this->BaseUrl = "{$this->BaseUrl}$version/";
 		$this->ClientID = $client_id;
 		$this->ClientSecret = $client_secret;
+		$this->redirectURL = $redirectURL;
 	}
 	
 	// Request functions
@@ -148,8 +151,8 @@ class FoursquareApi {
 	 * Returns a link to the Foursquare web authentication page.
 	 * @param String $redirect The configured redirect_uri for the provided client credentials
 	 */
-	public function AuthenticationLink($redirect){
-		$params = array("client_id"=>$this->ClientID,"response_type"=>"code","redirect_uri"=>$redirect);
+	public function AuthenticationLink($redirect = null){
+		$params = array("client_id"=>$this->ClientID,"response_type"=>"code","redirect_uri"=>$this->redirectURL);
 		return $this->MakeUrl($this->AuthUrl,$params);
 	}
 	
