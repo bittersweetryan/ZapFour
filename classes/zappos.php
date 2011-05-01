@@ -20,7 +20,7 @@ class zappos {
     function __construct($term = null) {
         if($term){
             $term = urlencode($term);
-            $this->_URL = "http://api.zappos.com/Search?key=91c3e78e9bef5d946328a5cef5b18b5023d65907&term=$term";
+            $this->_URL = "http://api.zappos.com/Search?key=91c3e78e9bef5d946328a5cef5b18b5023d65907&limit=3&term=$term";
             $this->_responsestr = "";
             $this->_data = array();
             $this->_products = array();
@@ -58,7 +58,7 @@ class zappos {
                     $style->setPrice($temp->price);
                     $style->setThumbnailImageUrl($temp->thumbnailImageUrl);
                     $product->setStyle($style, $temp->styleId);
-                    
+                    $product->setProductId($temp->productId);
                     $product->setProductName($temp->productName);
                     $this->_products[] = $product;
                     
@@ -76,7 +76,9 @@ class zappos {
     
     function getProduct($productID){
         return new product($productID);
-    
+    }
+    function getProducts(){
+        return $this->_products;
     }
 }
 

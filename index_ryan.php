@@ -30,8 +30,7 @@
 <body>
 <?php include("includes/header.php"); ?>
     <?php 
-    
-        
+    /*
 	$zap = new zappos();
         $search = $zap->search("umbrella");
 	echo "<pre>";print_r($search);echo"</pre>";
@@ -41,6 +40,21 @@
         
         $product = $zap->search(7780338);
         echo "<pre>";print_r($product);echo"</pre>";
+      */
+    
+        $cont = new zapFourController();
+        $cont->getWeatherProducts(53151);
+        echo"<pre>";print_r($cont);echo"</pre><hr /><hr />";
+        
+        /*fairbanks alaska
+        $cont = new zapFourController();
+        $cont->getWeatherProducts(99701);
+        echo"<pre>";print_r($cont);echo"</pre><hr /><hr />";
+        */
+        
+        $cont = new zapFourController();
+        $cont->getWeatherProducts(33101);
+        echo"<pre>";print_r($cont);echo"</pre>";
         
 	?>
 	<?php include("includes/footer.php"); ?>

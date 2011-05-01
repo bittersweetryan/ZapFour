@@ -3,16 +3,18 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
+interface iSearchable {
+    //put your code here
+    public function getKeywords();
+}
 
-class forecast {
+class forecast implements iSearchable{
     protected $_zip;
     protected $_XMLURL;
     protected $_xmlstr;
     protected $_data;
     
     private $conditions;
-
-
     private $min_precip_threshold;
     private $min_arctic_fahrenheit;
     private $max_arctic_fahrenheit;
@@ -49,12 +51,7 @@ class forecast {
             'mostlycloudy'=>0,'mostlysunny'=>0,'partlycloudy'=>0,'partlysunny'=>0,
             'rain'=>0,'sleet'=>0,'snow'=>0,'sunny'=>0,'tstorms'=>0,'tstorms'=>0,'unknown'=>0 );
     
-        $this->fetchXML()->parseXML()->render();
-        
-        echo $this->getAverageForecastJSON(1)."<br />";
-        echo $this->getAverageForecastJSON(3)."<br />";
-        echo $this->getAverageForecastJSON(5)."<br />";
-        echo $this->getAverageForecastJSON()."<br />";
+        $this->fetchXML()->parseXML();
     }
     
     private function fetchXML(){
@@ -121,6 +118,31 @@ class forecast {
     
     public function getAverageForecastJSON($days = false){
         return json_encode($this->getAverageForecast($days));
+    }
+    
+    public function getKeywords(){
+        $avg = (object) $this->getAverageForecast();
+        $keywords = array();
+        if($avg->highFahrenheit > $this->min_hot_fahrenheit) {
+            $keywords[] = "shorts";
+            $keywords[] = "sandals";
+        }elseif($avg->highFahrenheit > $this->min_warm_fahrenheit){
+            $keywords[] = "windbreaker";
+        }elseif($avg->highFahrenheit > $this->min_cold_fahrenheit){
+            $keywords[] = "Fleece Jacket";
+        }elseif($avg->highFahrenheit > $this->min_arctic_fahrenheit){
+            $keywords[] = "Arctic Jacket";
+        }
+        
+        if($avg->has_precip){
+            if($avg->lowFahrenheit > 32){
+                $keywords[] = "umbrella";
+            }else{
+                $keywords[] = "scarf";
+                $keywords[] = "gloves";
+            }
+        }
+        return $keywords;
     }
     
     public function hasRain(){

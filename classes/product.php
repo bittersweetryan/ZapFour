@@ -87,7 +87,10 @@ class product {
                             if(isset($temp->imageUrl)) $style->setImageUrl($temp->imageUrl);
                             if(isset($temp->thumbnailImageUrl)) $style->setThumbnailImageUrl($temp->thumbnailImageUrl);
                             if(isset($temp->goLiveDate)) $style->setGoLiveDate($temp->goLiveDate);
-                            if(isset($temp->productId)) $style->setProductId($temp->productId);
+                            if(isset($temp->productId)){
+                                $style->setProductId($temp->productId);
+                                $this->productId = $temp->productId;
+                            }
                             if(isset($temp->onSale)) $style->setOnSale($temp->onSale);
                             if(isset($temp->isNew)) $style->setIsNew($temp->isNew);
                             if(isset($temp->colorId)) $style->setColorId($temp->colorId);
