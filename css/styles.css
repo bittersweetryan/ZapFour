@@ -2,11 +2,11 @@
 /* ! Layout for desktop version   */
 /* ============================== */
 
-	body { margin: 0; padding: 0; font-family: Arial, Helvetica, sans-serif; font-size: 0.76em; color: #333; }
+	body { margin: 0; padding: 0; font-family: Arial, Helvetica, sans-serif; font-size: 0.76em; color: #333; background: #F8F8EE url('http://www.zappos.com/imgs/bg.20110419152830.png') repeat; }
 	
 	h1 { }
 	h2 { }
-	h3 { }
+	h3 { color: fuchsia; }
 	h4 { }
 	h5 { }
 	h6 { }
@@ -14,17 +14,17 @@
 	img { border: none; }
 	
 	#header { padding: 10px 0; background: #333; color: #FFF; }
-	#header h1 { float: left; width: 240px; height: 102px; }
-	#header h1 a { float: left; display: block; width: 240px; height: 102px; text-indent: -9999px; background: url('../images/logo-zap-four.png'); }
-	#header h2 { margin: 50px 0 0; padding: 0px; color: orange; text-transform: lowercase; }
+	#header h1 { float: left; margin-right: 30px; width: 240px; height: 112px; }
+	#header h1 a { float: left; display: block; width: 240px; height: 112px; text-indent: -9999px; background: url('../images/logo-zap-four.png'); }
+	#header h2 { margin: 63px 0 0; padding: 0px; color: orange; text-transform: lowercase; }
 	
-	#foursquareloginlink { float: right; height: 24px; width: 180px; }
-	#foursquareloginlink span { float: right; display: block; height: 24px; width: 180px; text-indent: -9999px; background: url("../images/signinwithfoursquare.png") no-repeat; }
-	
+	#foursquareloginlink { float: right; height: 24px; width: 180px; text-indent: -9999px; text-align: left; overflow: hidden; background: url("../images/signinwithfoursquare.png") no-repeat; }
+		
 	#utility { margin: 0 0 30px; padding: 0; list-style: none; text-align: right; }
-	#utility li { display: inline; padding-right: 6px; margin-left: 3px;  border-right: solid 1px gray; }
-	#utility li.last { border-right: none; margin-right: -3px; }
-	#utility a { color: #FFF; font-size: 0.9em; }
+	#utility li { display: inline; }
+	#utility li.last a { border-right: none; padding-right: -3px; }
+	#utility a { color: #FFF; font-size: 0.9em; margin-left: 0.7em; padding-right: 1em;  border-right: solid 1px gray; }
+	#utility a.twitter { display: inline-block; width: 16px; height: 16px; text-align: left; overflow: hidden; text-indent: -999px; background: url('../images/twitter.png') no-repeat; }
 	
 	#weather, #checkins { margin: 0; padding: 0; list-style: none; }
 	#weather li { float: left; margin-right: 6px; }
@@ -44,9 +44,20 @@
 	#checkins li { float: left; margin-right: 6px; }
 	#checkins li.last { margin-right: 0px; }
 	
-	#navigation { padding: 10px 0; background: #EEE; border-bottom: solid 1px gray; }
+	#middle { padding-top: 4px; text-align: center; }
 	
-	#content { margin: 1em 0;}
+	#navigation { padding: 10px 0; background: #EEE url('http://www.zappos.com/imgs/stripeBG.20110419152841.png') repeat; border-bottom: solid 1px #CCC; }
+	
+	#content { margin: 20px 0; }
+	#content .row { margin-bottom: 20px; }
+	.product { padding: 6px; text-align: center; background: #FFF; border: solid 1px #CCC; -moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; }
+	
+	.productImg { height: 150px; }
+	
+	.tooltip { display:none; background:transparent url('http://flowplayer.org/tools/img/tooltip/black_arrow.png'); font-size:12px; height:70px; width:160px; padding:25px; color:#fff; text-align: center; font-weight: bold;}
+	.right { text-align: right; }
+	
+	.products div { text-align: center; }
 
 /* ============================= */
 /* ! Layout for mobile version   */
