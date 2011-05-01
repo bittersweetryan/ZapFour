@@ -35,7 +35,11 @@
 	#weather li.warm a { background-image: url('../images/icons/warm.png'); }
 	#weather li.hot a { background-image: url('../images/icons/hot.png'); }
 	#weather li.cold a { background-image: url('../images/icons/cold.png'); }
-	
+	#weather li.cloudy a { background-image: url('../images/icons/cloudy.png'); }
+	#weather li.thunderstorm a { background-image: url('../images/icons/thunderstorm.png'); }
+	#weather li.partlysunny a { background-image: url('../images/icons/partlysunny.png'); }
+	#weather li.na a { background-image: url('../images/icons/na.png'); }
+
 	#checkins { float: right; }
 	#checkins li { float: left; margin-right: 6px; }
 	#checkins li.last { margin-right: 0px; }
